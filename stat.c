@@ -38,13 +38,14 @@ int main(){
   printf("%s", holder);
 
   //File permissions...
-  printf( (buffer.st_mode & S_IRUSR) ? "r" : "-");
-  printf( (buffer.st_mode & S_IWUSR) ? "w" : "-");
-  printf( (buffer.st_mode & S_IXUSR) ? "x" : "-");
-  printf( (buffer.st_mode & S_IRGRP) ? "r" : "-");
-  printf( (buffer.st_mode & S_IWGRP) ? "w" : "-");
-  printf( (buffer.st_mode & S_IXGRP) ? "x" : "-");
-  printf( (buffer.st_mode & S_IROTH) ? "r" : "-");
-  printf( (buffer.st_mode & S_IWOTH) ? "w" : "-");
-  printf( (buffer.st_mode & S_IXOTH) ? "x" : "-");
+  printf("File Permissions:")
+  printf((buffer.st_mode & S_IRUSR) ? "r" : "-");
+  printf((buffer.st_mode & S_IWUSR) ? "w" : "-");
+  printf((buffer.st_mode & S_IXUSR) ? "x" : "-");
+  printf((buffer.st_mode & S_IRGRP) ? "r" : "-");
+  printf((buffer.st_mode & S_IWGRP) ? "w" : "-");
+  printf((buffer.st_mode & S_IXGRP) ? "x" : "-");
+  printf((buffer.st_mode & S_IROTH) ? "r" : "-");
+  printf((buffer.st_mode & S_IWOTH) ? "w" : "-");
+  printf((buffer.st_mode & S_IXOTH) ? "x" : "-");
 }
