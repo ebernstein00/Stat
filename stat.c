@@ -38,7 +38,7 @@ int main(){
   printf("%s", holder);
 
   //File permissions...
-  printf("File Permissions:");
+  printf("File Permissions:\t");
   printf((buffer.st_mode & S_IRUSR) ? "r" : "-");
   printf((buffer.st_mode & S_IWUSR) ? "w" : "-");
   printf((buffer.st_mode & S_IXUSR) ? "x" : "-");
