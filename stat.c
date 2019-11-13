@@ -10,7 +10,7 @@ struct stat buffer;
 int status;
 
 int main(){
-  status = stat("/dev/random", &buffer);
+  status = stat("file.txt", &buffer);
   if (status < 0){
     printf("Error #%d: %s\n", errno, strerror(errno));
   }
