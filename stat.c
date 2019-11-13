@@ -17,12 +17,12 @@ int main(){
   printf("Information for selected file:\n");
   printf("File Size:\t\t%d\n", buffer.st_size);
   printf("File mode:\t\t%o\n", buffer.st_mode);
-  printf("Last access time:\t\t%s\n", ctime(&buffer.st_atime));
+  printf("Last access time:\t%s\n", ctime(&buffer.st_atime));
 
   //KB, MB, GB
   int size = buffer.st_size;
   char holder[100];
-  sprintf(holder, "File Size:\t\t%d B\n", size);
+  printf(holder, "File Size:\t\t%d B\n", size);
   if(size >= 1024){
   	sprintf(holder, "File Size:\t\t%d KB\n", size / 1024);
   	size /= 1024;
