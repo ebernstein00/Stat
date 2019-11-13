@@ -20,20 +20,20 @@ int main(){
   printf("Last access time:\t%s\n", ctime(&buffer.st_atime));
 
   //KB, MB, GB
-  int size = buffer.st_size;
+  long size = buffer.st_size;
   char holder[100];
-  printf("File Size:\t\t%d B\n", size);
+  printf("File Size:\t\t%ld B\n", size);
   size = 6000000000;
   if(size >= 1024){
-  	sprintf(holder, "File Size:\t\t%d KB\n", size / 1024);
+  	sprintf(holder, "File Size:\t\t%ld KB\n", size / 1024);
   	size /= 1024;
   }
   if(size >= 1024){
-  	sprintf(holder, "File Size:\t\t%d MB\n", size / 1024);
+  	sprintf(holder, "File Size:\t\t%ld MB\n", size / 1024);
   	size /= 1024;
   }
   if(size >= 1024){
-  	sprintf(holder, "File Size:\t\t%d GB\n", size / 1024);
+  	sprintf(holder, "File Size:\t\t%ld GB\n", size / 1024);
   	size /= 1024;
   }
 }
