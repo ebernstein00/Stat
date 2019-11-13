@@ -22,7 +22,7 @@ int main(){
   //KB, MB, GB
   int size = buffer.st_size;
   char holder[100];
-  printf(holder, "File Size:\t\t%d B\n", size);
+  printf("File Size:\t\t%d B\n", size);
   if(size >= 1024){
   	sprintf(holder, "File Size:\t\t%d KB\n", size / 1024);
   	size /= 1024;
