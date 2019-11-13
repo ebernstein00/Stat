@@ -15,14 +15,14 @@ int main(){
     printf("Error #%d: %s\n", errno, strerror(errno));
   }
   printf("Information for selected file:\n");
-  printf("File Size:\t\t%d\n", buffer.st_size);
+  printf("File Size:\t\t%ld\n", buffer.st_size);
   printf("File mode:\t\t%o\n", buffer.st_mode);
   printf("Last access time:\t%s\n", ctime(&buffer.st_atime));
 
   //KB, MB, GB
   long size = buffer.st_size;
   char holder[100];
-  printf("File Size:\t\t%ld B\n", size);
+  sprintf(holder, "File Size:\t\t%ld B\n", size);
   size = 6000000000;
   if(size >= 1024){
   	sprintf(holder, "File Size:\t\t%ld KB\n", size / 1024);
@@ -36,4 +36,5 @@ int main(){
   	sprintf(holder, "File Size:\t\t%ld GB\n", size / 1024);
   	size /= 1024;
   }
+  printf("%s", holder);
 }
