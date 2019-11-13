@@ -23,7 +23,6 @@ int main(){
   long size = buffer.st_size;
   char holder[100];
   sprintf(holder, "File Size:\t\t%ld B\n", size);
-  size = 6000000000;
   if(size >= 1024){
   	sprintf(holder, "File Size:\t\t%ld KB\n", size / 1024);
   	size /= 1024;
