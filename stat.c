@@ -17,7 +17,7 @@ int main(){
   printf("Information for selected file:\n");
   printf("File Size:\t\t%d\n", buffer.st_size);
   printf("File mode:\t\t%o\n", buffer.st_mode);
-  printf("Last access time:\t\t%s\n", ctime(&buffer.atime));
+  printf("Last access time:\t\t%s\n", ctime(&buffer.st_atime));
 
   //KB, MB, GB
   int size = buffer.st_size;
