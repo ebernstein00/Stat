@@ -16,10 +16,10 @@ int main(){
   }
   printf("Information for selected file:\n");
   printf("File Size:\t\t%ld\n", buffer.st_size);
-  printf("File mode:\t\t%d\n", buffer.st_mode);
+  printf("File mode:\t\t%o\n", buffer.st_mode);
   printf("Last access time:\t%s\n", ctime(&buffer.st_atime));
 
-  //KB, MB, GB
+  //KB, MB, GB...
   long size = buffer.st_size;
   char holder[100];
   sprintf(holder, "File Size:\t\t%ld B\n", size);
@@ -36,4 +36,15 @@ int main(){
   	size /= 1024;
   }
   printf("%s", holder);
+
+  //File permissions...
+  printf( (buffer.st_mode & S_IRUSR) ? "r" : "-");
+  printf( (buffer.st_mode & S_IWUSR) ? "w" : "-");
+  printf( (buffer.st_mode & S_IXUSR) ? "x" : "-");
+  printf( (buffer.st_mode & S_IRGRP) ? "r" : "-");
+  printf( (buffer.st_mode & S_IWGRP) ? "w" : "-");
+  printf( (buffer.st_mode & S_IXGRP) ? "x" : "-");
+  printf( (buffer.st_mode & S_IROTH) ? "r" : "-");
+  printf( (buffer.st_mode & S_IWOTH) ? "w" : "-");
+  printf( (buffer.st_mode & S_IXOTH) ? "x" : "-");
 }
