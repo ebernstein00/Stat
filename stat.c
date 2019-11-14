@@ -16,7 +16,7 @@ int main(){
   }
   printf("Information for selected file:\n");
   printf("File Size:\t\t%ld\n", buffer.st_size);
-  printf("File mode:\t\t%o\n", buffer.st_mode);
+  printf("File mode:\t\t%o\n", buffer.st_mode % 512);
   printf("Last access time:\t%s\n", ctime(&buffer.st_atime));
 
   //KB, MB, GB...
@@ -39,12 +39,15 @@ int main(){
 
   //File permissions...
   printf("File Permissions:\t");
+  //User permissions
   printf((buffer.st_mode & S_IRUSR) ? "r" : "-");
   printf((buffer.st_mode & S_IWUSR) ? "w" : "-");
   printf((buffer.st_mode & S_IXUSR) ? "x" : "-");
+  //Group permissions...
   printf((buffer.st_mode & S_IRGRP) ? "r" : "-");
   printf((buffer.st_mode & S_IWGRP) ? "w" : "-");
   printf((buffer.st_mode & S_IXGRP) ? "x" : "-");
+  //Other permissions...
   printf((buffer.st_mode & S_IROTH) ? "r" : "-");
   printf((buffer.st_mode & S_IWOTH) ? "w" : "-");
   printf((buffer.st_mode & S_IXOTH) ? "x" : "-");
